@@ -1,0 +1,5 @@
+package br.com.fiap.pbecd.entities;
+
+public class ContatoCliente {
+
+}

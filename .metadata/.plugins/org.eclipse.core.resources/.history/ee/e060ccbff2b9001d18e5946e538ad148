@@ -1,0 +1,36 @@
+package br.com.fiap.smartcities.test;
+
+import br.com.fiap.smartcities.entities.Cliente;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("smartcities");
+		EntityManager em = fabrica.createEntityManager();
+
+		Cliente cliente = new Cliente();
+		cliente.setNome("Poyatos");
+
+		// Tratamento de exceção para caso ocorra um erro na hora de realizar o commit em uma transação
+		try {
+			/*
+			 * Método que faz com que essa classe comece a ser gerenciada pelo EntityManager
+			 */
+			em.persist(cliente);
+			
+			// Início e confirmação de uma transação para o banco de dados
+			em.getTransaction().begin();
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			if (em.getTransaction().isActive()) {
+				em.getTransaction().rollback();
+			}
+		}
+
+		em.close();
+		fabrica.close();
+	}
+}

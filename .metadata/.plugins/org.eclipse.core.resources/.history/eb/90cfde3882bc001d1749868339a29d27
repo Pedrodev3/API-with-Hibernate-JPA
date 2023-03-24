@@ -1,0 +1,24 @@
+package br.com.fiap.pbecd.test;
+
+import br.com.fiap.pbecd.entities.Drone;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+
+public class TesteBuscarAtualizar {
+
+	public static void main(String[] args) {
+		EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("pbecd");
+		EntityManager em = fabrica.createEntityManager();
+		
+		
+		// Busca
+		Drone drone = em.find(Drone.class, 1);
+		
+		
+		
+		em.close();
+		fabrica.close();
+	}
+
+}

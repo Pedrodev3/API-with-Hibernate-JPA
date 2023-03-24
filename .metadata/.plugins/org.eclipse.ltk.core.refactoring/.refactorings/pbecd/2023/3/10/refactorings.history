@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;br.com.fiap.pbecd.test.TesteCrud&apos; to &apos;TesteInserir&apos;&#x0D;&#x0A;- Original project: &apos;pbecd&apos;&#x0D;&#x0A;- Original element: &apos;br.com.fiap.pbecd.test.TesteCrud&apos;&#x0D;&#x0A;- Renamed element: &apos;br.com.fiap.pbecd.test.TesteInserir&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;TesteCrud&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;br.com.fiap.pbecd.test{TesteCrud.java[TesteCrud" matchStrategy="1" name="TesteInserir" qualified="false" references="true" similarDeclarations="false" stamp="1678135196142" textual="false" version="1.0"/>
+</session>

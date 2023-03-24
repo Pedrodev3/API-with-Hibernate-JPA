@@ -1,0 +1,20 @@
+package br.com.fiap.pbecd.test;
+
+import br.com.fiap.pbecd.entities.Drone;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+
+public class TesteInserir {
+
+	public static void main(String[] args) {
+		EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("smartcities");
+		EntityManager em = fabrica.createEntityManager();
+		
+		Drone drone = new Drone();
+		drone.setNumeroSerie(1234567);
+		drone.setDataCadastro("03/06/2020");
+
+	}
+
+}

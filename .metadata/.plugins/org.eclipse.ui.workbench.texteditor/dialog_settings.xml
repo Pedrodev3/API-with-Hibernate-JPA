@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="Receita receita = new Receita();"/>
+		<list key="findhistory">
+			<item value="Receita receita = new Receita();"/>
+			<item value="&lt;property name=&quot;hibernate.format_sql&quot; value=&quot;true&quot; /&gt;"/>
+		</list>
+	</section>
+</section>

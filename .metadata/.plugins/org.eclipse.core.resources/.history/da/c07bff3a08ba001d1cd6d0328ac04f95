@@ -1,0 +1,105 @@
+package br.com.fiap.smartcities.entities;
+
+import java.util.Calendar;
+
+import org.hibernate.annotations.CreationTimestamp;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+
+
+
+
+@Entity
+@Table(name="t_smc_produto")
+public class Produto {
+
+	@Id
+	@SequenceGenerator(name="produto", sequenceName="sq_t_smc_produto", allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="produto")
+	@Column(name="cd_produto")
+	private int id;
+	
+	@Column(name="nm_produto", nullable=false, length=100)
+	private String nome;
+	
+	@Column(name="vl_preco")
+	private double preco;
+	
+	@Temporal(TemporalType.DATE)
+	@Column(name="dt_data_validade")
+	private Calendar dataValidade;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(name="ds_estado")
+	private Estado estado;
+	
+	@CreationTimestamp
+	@Column(name="dt_cadastro")
+	private Calendar dataCadastro;
+	
+	@OneToOne(mappedBy = "e")
+	private Cliente cliente;
+
+	public Produto() {
+		super();
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+
+	public Calendar getDataValidade() {
+		return dataValidade;
+	}
+
+	public void setDataValidade(Calendar dataValidade) {
+		this.dataValidade = dataValidade;
+	}
+
+	public Estado getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Estado estado) {
+		this.estado = estado;
+	}
+
+	public Calendar getDataCadastro() {
+		return dataCadastro;
+	}
+
+	public void setDataCadastro(Calendar dataCadastro) {
+		this.dataCadastro = dataCadastro;
+	}
+}

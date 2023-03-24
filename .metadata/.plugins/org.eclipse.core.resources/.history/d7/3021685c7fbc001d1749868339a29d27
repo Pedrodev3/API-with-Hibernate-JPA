@@ -1,0 +1,31 @@
+package br.com.fiap.pbecd.test;
+
+import br.com.fiap.pbecd.entities.Drone;
+import br.com.fiap.pbecd.entities.Receita;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+
+public class TesteInserir {
+
+	public static void main(String[] args) {
+		EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("smartcities");
+		EntityManager em = fabrica.createEntityManager();
+		
+		Drone drone = new Drone();
+		drone.setNumeroSerie(1234567);
+		
+		Receita receita = new Receita();
+		receita.set
+		
+		try {
+			em.persist(drone);
+			em.getTransaction().begin();
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+	}
+
+}

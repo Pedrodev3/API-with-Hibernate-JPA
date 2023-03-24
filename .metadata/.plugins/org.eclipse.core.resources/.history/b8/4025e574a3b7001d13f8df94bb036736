@@ -1,0 +1,12 @@
+package br.com.fiap.smartcities.test;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Persistence;
+
+public class teste {
+
+	public static void main(String[] args) {
+		EntityManager fabrica = Persistence.createEntityManagerFactory("smartcities");
+		EntityManager em = 
+	}
+}

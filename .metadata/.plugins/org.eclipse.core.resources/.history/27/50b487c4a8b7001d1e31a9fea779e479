@@ -1,0 +1,7 @@
+package br.com.fiap.smartcities.test;
+
+public class TesteBusca {
+	public static void main(String[] args) {
+		
+	}
+}

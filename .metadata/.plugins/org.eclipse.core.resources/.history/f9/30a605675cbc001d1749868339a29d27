@@ -1,0 +1,124 @@
+package br.com.fiap.pbecd.entities;
+
+import java.sql.Date;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+
+@Entity
+@Table(name= "t_pbecd_cliente")
+public class Cliente {
+
+	@Id
+	@SequenceGenerator(name="cliente", sequenceName="sq_t_pbecd_cliente", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cliente")
+	@Column(name="id_cliente")
+	private int id;
+	
+	@Column(name="nm_cliente")
+	private String nomeCliente;
+	
+	@Column(name="nr_cpf")
+	private int cpf;
+	
+	@Column(name="nm_rg")
+	private String rg;
+	
+	@Temporal(TemporalType.DATE)
+	@Column(name="dt_nascimento")
+	private Date dataNascimento;
+	
+	@Column(name="fl_sexo_biologico")
+	private String sexoBiologico;
+	
+	@Column(name="fl_sexo_biologico")
+	private String grupoSanguineo;
+	
+	@ManyToOne
+	@JoinColumn(name="id_drone")
+	private Drone drone;
+	
+	
+	
+	public Cliente() {
+		super();
+	}
+
+	public Cliente(int id, String nomeCliente, int cpf, String rg, Date dataNascimento, String sexoBiologico,
+			String grupoSanguineo) {
+		super();
+		this.id = id;
+		this.nomeCliente = nomeCliente;
+		this.cpf = cpf;
+		this.rg = rg;
+		this.dataNascimento = dataNascimento;
+		this.sexoBiologico = sexoBiologico;
+		this.grupoSanguineo = grupoSanguineo;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getNomeCliente() {
+		return nomeCliente;
+	}
+
+	public void setNomeCliente(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
+	}
+
+	public int getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(int cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getRg() {
+		return rg;
+	}
+
+	public void setRg(String rg) {
+		this.rg = rg;
+	}
+
+	public Date getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+	public String getSexoBiologico() {
+		return sexoBiologico;
+	}
+
+	public void setSexoBiologico(String sexoBiologico) {
+		this.sexoBiologico = sexoBiologico;
+	}
+
+	public String getGrupoSanguineo() {
+		return grupoSanguineo;
+	}
+
+	public void setGrupoSanguineo(String grupoSanguineo) {
+		this.grupoSanguineo = grupoSanguineo;
+	}	
+	
+}
